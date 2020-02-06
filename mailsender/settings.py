@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 #DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = [mailsender-e2.herokuapp.com]
+ALLOWED_HOSTS = ['mailsender-e2.herokuapp.com']
 
 
 # Application definition
