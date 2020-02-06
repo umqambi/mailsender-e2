@@ -1,0 +1,30 @@
+{% extends "base_tpl.html" %}
+
+{% block content %}
+<div class = 'container'>
+    <div class='row'>
+        <div class = 'col-sm-6'>
+            <h1> Ожидают отправку </h1>
+            <ul class="list-group">
+            {% for mail in mails %}
+                {% if not mail.is_send %}
+                    <li class="list-group-item">{{ mail.subject }}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        <div class = 'col-sm-6'>
+            <h1> Отправлены </h1>
+            <ul class="list-group">
+            {% for mail in mails %}
+                {% if mail.is_send %}
+                    <li class="list-group-item">{{ mail.subject }}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
